@@ -16,23 +16,29 @@ class App extends Component {
     return (
        <div>
        <h1> This is the tictactoe game</h1>
-       <div className = "container">
+    <div className = "container">
        <div className = "row">
-       <div calssName = "col-md-6 col-md-offset-3">
-        <Box/>
-        <Box/>
-        <Box/>
-        <Box/>
-        <Box/>
-        <Box/>
-        <Box/>
-        <Box/>
-        <Box/>
-
+       <div calssName = "col-md-3 col-md-offset-3">
+            <Box/>
+            <Box/>
+            <Box/>
+          <div className="row">
+          <div classname = "col-md-3">
+            <Box/>
+            <Box/>
+            <Box/>
+          </div>
+          </div>
+        <div className="row">
+        <div classname = "col-md-3">
+              <Box/>
+              <Box/>
+              <Box/>
+          </div>
+          </div>
         </div>
         </div>
-        </div>
-       </div>
+    </div>
        
        );
   }
