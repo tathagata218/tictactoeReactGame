@@ -4,8 +4,8 @@ import friends from "./friends.json";
 
 
 const divStyle = {
-float: "left",
-background: "green"
+  float: "left",
+background: "gray"
 }
 class App extends Component {
   // Setting this.state.friends to the friends json array
@@ -19,20 +19,52 @@ class App extends Component {
   render() {
     return (
   <div>
-       <h1> This is the tictactoe game</h1>
-    <div className = "container">
-       <div className = "row">
-       <div style={divStyle} calssName = "col-md-2" >
+    <h1> This is the tictactoe game</h1>
+      <div className = "container">
+        <div className = "row">
+          <div style={divStyle} calssName = "col-md-2" >
             <Box/>
-      </div>
-      <div style={divStyle} calssName = "col-md-2" >
+          </div>
+        
+          <div style={divStyle} calssName = "col-md-2" >
             <Box/>
-      </div>
-      <div style={divStyle} calssName = "col-md-2" >
+          </div>
+        
+          <div style={divStyle} calssName = "col-md-2" >
             <Box/>
+          </div>
+      
+        </div>
+
+        <div className = "row">
+          <div style={divStyle} calssName = "col-md-2" >
+            <Box/>
+          </div>
+      
+          <div style={divStyle} calssName = "col-md-2" >
+            <Box/>
+          </div>
+      
+          <div style={divStyle} calssName = "col-md-2" >
+            <Box/>
+          </div>
+        </div>
+
+        <div className = "row">
+          <div style={divStyle} calssName = "col-md-2" >
+            <Box/>
+          </div>
+    
+          <div style={divStyle} calssName = "col-md-2" >
+            <Box/>
+          </div>
+    
+          <div style={divStyle} calssName = "col-md-2" >
+            <Box/>
+          </div>
+        </div>
+
       </div>
-      </div>
-    </div>
   </div>
        );
   }
