@@ -1,8 +1,11 @@
 import React from "react";
 import "./Box.css";
 
-const Box = () => {
-    return (<div className="test"></div>)
+
+
+const Box = (props) => {
+    
+    return (<div onClick={props.func} className="test"></div>)
 
 }
 
