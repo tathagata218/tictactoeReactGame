@@ -1,25 +1,28 @@
 import React, { Component } from "react";
-import Box from "./components/Box"
-import friends from "./friends.json";
+// import Box from "./components/Box"
+// import friends from "./friends.json";
 
 
-const divStyle = {
-  float: "left",
-  paddingBottom : "15px",
-  background: "gray"
-}
+
 class App extends Component {
   // Setting this.state.friends to the friends json array
-  state = {
-    friends
-  };
+ 
 
-  clickTest =  (e, data) => {
-  
-    console.log(this);
-    console.log(e);
-    console.log(data);
-    alert("this works");
+
+
+  renderDiv = (i) => {
+    const divStyle = {
+      float  : "left", 
+      width  : "50px",
+      height : "50px",
+      margin : "12px",
+      paddingBottom : "15px",
+      border : "2px solid black"
+    }
+    const clickTest =  () => {
+      alert("this works " + i );
+      };
+    return (<div onClick={clickTest} style={divStyle} value={i}></div>);
   };
 
 
@@ -30,45 +33,45 @@ class App extends Component {
     <h1> This is the tictactoe game</h1>
       <div className = "container">
         <div className = "row">
-          <div style={divStyle}  className = "col-md-2" >
-            <Box value="1" func={this.clickTest} />
+          <div   className = "col-md-2" >
+            {this.renderDiv(1)}
           </div>
         
-          <div style={divStyle}  className = "col-md-2" >
-            <Box value="2" func={this.clickTest} />
+          <div   className = "col-md-2" >
+          {this.renderDiv(2)}
           </div>
         
-          <div style={divStyle}  className = "col-md-2" >
-            <Box value="3" func={this.clickTest}/>
+          <div  className = "col-md-2" >
+          {this.renderDiv(3)}
           </div>
       
         </div>
 
         <div className = "row">
-          <div style={divStyle}  className = "col-md-2" >
-            <Box value="4" func={this.clickTest}/>
+          <div   className = "col-md-2" >
+          {this.renderDiv(4)}
           </div>
       
-          <div style={divStyle}  className = "col-md-2" >
-            <Box value="5" func={this.clickTest}/>
+          <div  className = "col-md-2" >
+          {this.renderDiv(5)}
           </div>
       
-          <div style={divStyle}  className = "col-md-2" >
-            <Box value="6" func={this.clickTest}/>
+          <div   className = "col-md-2" >
+          {this.renderDiv(6)}
           </div>
         </div>
 
         <div className = "row">
-          <div style={divStyle}  className = "col-md-2" >
-            <Box value="6" func={this.clickTest}/>
+          <div className = "col-md-2" >
+          {this.renderDiv(7)}
           </div>
     
-          <div style={divStyle}  className = "col-md-2" >
-            <Box value="7" func={this.clickTest}/>
+          <div  className = "col-md-2" >
+          {this.renderDiv(8)}
           </div>
     
-          <div style={divStyle}  className = "col-md-2" >
-            <Box value="8" func={this.clickTest}/>
+          <div   className = "col-md-2" >
+            {this.renderDiv(9)}
           </div>
         </div>
 
