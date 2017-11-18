@@ -6,8 +6,11 @@ import React, { Component } from "react";
 
 class App extends Component {
   // Setting this.state.friends to the friends json array
- 
-
+ state = {
+   player_one_choice: "X",
+   player_one_choice: "O",
+   
+ };
 
 
   renderDiv = (i) => {
@@ -20,7 +23,7 @@ class App extends Component {
       border : "2px solid black"
     }
     const clickTest =  () => {
-      alert("this works " + i );
+    this.state.player_one_choice;   
       };
     return (<div onClick={clickTest} style={divStyle} value={i}></div>);
   };
