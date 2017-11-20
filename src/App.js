@@ -74,7 +74,11 @@ class App extends Component {
       winner : null
     });
     this.render();
-    if 
+    if(checkWinner()){
+      this.setState({
+        winner : 
+      });
+    } 
     
   }
 
@@ -84,11 +88,14 @@ class App extends Component {
 
     for (let i = 0; i < winnerCombo.length; i++){
       for( let x = 0; x < winnerCombo[i].length; i++ ){
-        if( this.state.board[winnerCombo[i][x]] === "X" || this.state.board[winnerCombo[i][x]] === "O"){
-            return true;
+        if( this.state.board[winnerCombo[i][x]] === "X"){
+            return "X is the winner";
+        }
+        else if ( this.state.board[winnerCombo[i][x]] === "O" ){
+          return "O is the winner"
         }
         else {
-          return false;
+          return "Its a Draw";
         }
       }
     }
