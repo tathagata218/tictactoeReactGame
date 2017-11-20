@@ -17,10 +17,12 @@ class App extends Component {
   });
   }
 
+  this.checkWinner();
+  console.log(this.state);
   }
 
   divClickfuncOne (index){
-    this.state.board
+  
   }
 
   onePlayer =  () => {
@@ -73,30 +75,20 @@ class App extends Component {
       ],
       winner : null
     });
+    
     this.render();
-    if(checkWinner()){
-      this.setState({
-        winner : 
-      });
+   
     } 
     
-  }
+  
 
   checkWinner = () => {
     let winnerCombo = [[0,1,2],[3,4,5],[7,8,9],[0,3,7],[1,8,9],[2,5,9],[0,4,8],[2,4,7]];
- 
+    let boardArr = this.state.board;
 
     for (let i = 0; i < winnerCombo.length; i++){
       for( let x = 0; x < winnerCombo[i].length; i++ ){
-        if( this.state.board[winnerCombo[i][x]] === "X"){
-            return "X is the winner";
-        }
-        else if ( this.state.board[winnerCombo[i][x]] === "O" ){
-          return "O is the winner"
-        }
-        else {
-          return "Its a Draw";
-        }
+        
       }
     }
     
@@ -155,7 +147,7 @@ class App extends Component {
       </div>
       );
     }
-  }
+  };
 
 }
 
