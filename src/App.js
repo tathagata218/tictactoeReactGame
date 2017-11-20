@@ -1,87 +1,142 @@
-import React, { Component } from "react";
-// import Box from "./components/Box"
-// import friends from "./friends.json";
-
-
+import React, { Component } from 'react';
+import './App.css';
 
 class App extends Component {
-  // Setting this.state.friends to the friends json array
- state = {
-   player_one_choice: "X",
-   player_one_choice: "O",
-   
- };
+  
+  state = { 
+      button_clicked : true
+ 
+          };
 
-
-  renderDiv = (i) => {
-    const divStyle = {
-      float  : "left", 
-      width  : "50px",
-      height : "50px",
-      margin : "12px",
-      paddingBottom : "15px",
-      border : "2px solid black"
-    }
-    const clickTest =  () => {
-    this.state.player_one_choice;   
-      };
-    return (<div onClick={clickTest} style={divStyle} value={i}></div>);
-  };
-
-
-  // Map over this.state.friends and render a FriendCard component for each friend object
-  render() {
-    return (
-  <div>
-    <h1> This is the tictactoe game</h1>
-      <div className = "container">
-        <div className = "row">
-          <div   className = "col-md-2" >
-            {this.renderDiv(1)}
-          </div>
-        
-          <div   className = "col-md-2" >
-          {this.renderDiv(2)}
-          </div>
-        
-          <div  className = "col-md-2" >
-          {this.renderDiv(3)}
-          </div>
-      
-        </div>
-
-        <div className = "row">
-          <div   className = "col-md-2" >
-          {this.renderDiv(4)}
-          </div>
-      
-          <div  className = "col-md-2" >
-          {this.renderDiv(5)}
-          </div>
-      
-          <div   className = "col-md-2" >
-          {this.renderDiv(6)}
-          </div>
-        </div>
-
-        <div className = "row">
-          <div className = "col-md-2" >
-          {this.renderDiv(7)}
-          </div>
-    
-          <div  className = "col-md-2" >
-          {this.renderDiv(8)}
-          </div>
-    
-          <div   className = "col-md-2" >
-            {this.renderDiv(9)}
-          </div>
-        </div>
-
-      </div>
-  </div>
-       );
+  divClickfuncTwo  (index)  {
+  if( this.state.board[index] === ""){
+  this.state.board[index] = this.state.current_player;
+  this.setState({
+    board : this.state.board,
+    current_player : this.state.player_one_symbol === this.state.current_player ?  this.state.player_two_symbol :  this.state.player_one_symbol  
+  });
   }
+
+  }
+
+  divClickfuncOne (index){
+    this.state.board
+  }
+
+  onePlayer =  () => {
+
+    this.setState({
+      button_clicked : false,
+      player_info : "Single Player",
+      player_one_symbol : "X",
+      player_two_symbol : "O",
+      current_player : "X",
+      single_player_status : true,
+      board : [
+        '','','','','','','','',''
+      ],
+      winner : null
+    });
+
+
+    this.render();
+  }
+  
+  twoPlayer = () => {
+   
+   this.setState ({
+      button_clicked : false,
+      player_info : "Two Player",
+      player_one_symbol : "X",
+      player_two_symbol : "O",
+      current_player : "X",
+      two_player_status : true,
+      board : [
+        '','','','','','','','',''
+      ],
+      winner : null
+    });
+    this.render();
+  }
+
+  goBack = () => { 
+    this.setState({
+      button_clicked: true,
+      player_info : "Single Player",
+      player_one_symbol : "X",
+      player_two_symbol : "O",
+      current_player : "X",
+      single_player_status : false,
+      two_player_status : false,
+      board : [
+        '','','','','','','','',''
+      ],
+      winner : null
+    });
+    this.render();
+  }
+
+  checkWinner = () => {
+    let winnerCombo = [[0,1,2],[3,4,5],[7,8,9],[0,3,7],[1,8,9],[2,5,9],[0,4,8],[2,4,7]];
+    let xArr = [], oArr = [];
+    
+   
+  }
+
+  render() {
+    
+    if(this.state.button_clicked ){
+    return (
+      <div>
+        <div className="mainDispalay">
+          <h1>Tic Tac Toe Game</h1>
+          <div>
+            <button className="btnClick" onClick={this.onePlayer} >Player VS Computer</button>
+            <button className="btnClick" onClick={this.twoPlayer} >Player VS Player</button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+   else if(this.state.single_player_status){
+      return(
+        <div>
+          <div className="mainDispalay">
+            <h1> {this.state.player_info} </h1>
+            <button onClick={this.goBack}>Go Back</button>
+            <h2>it's '{this.state.current_player}' turn !!!</h2>
+          </div>
+
+        <div className="board">
+            {this.state.board.map((value,index) => {
+                return (<div onClick={ () => { this.divClickfuncOne(index) }} value={index} className="square">{value}</div>)
+            })} 
+   
+          </div>
+      </div>
+      );
+    }
+    else if (this.state.two_player_status){
+      return(
+        <div>
+          <div className="mainDispalay">
+            <h1>{this.state.player_info}</h1>
+            <button onClick={this.goBack}>Go Back</button>
+            <h2>it's '{this.state.current_player}' turn !!!</h2>
+          </div>
+          <div className="mainDispalay">
+              
+          </div>
+          <div className="board">
+              {this.state.board.map((value,index) => {
+                return (<div onClick={ () => {this.divClickfuncTwo(index) }} value={index} className="square">{value}</div>)
+              })} 
+        </div>
+      </div>
+      );
+    }
+  }
+
 }
 
 export default App;
