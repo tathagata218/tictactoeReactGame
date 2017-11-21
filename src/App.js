@@ -18,8 +18,8 @@ class App extends Component {
   });
   }
 
-  console.log(index);
-  // console.log(this.state);
+  console.log(this.checkWinner())
+  console.log(this.state);
   }
 
   divClickfuncOne (index){
@@ -86,18 +86,20 @@ class App extends Component {
   checkWinner = () => {
     let playersWin = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
     let playersChoice = this.state.board;
-    let current_turn = this.state.current_player;
     let result;
 
-    for( let i = 0; i<playersWin.length; i++){
-      if( playersChoice[playersWin[i][0]] !== "" && playersChoice[playersWin[i][1]] !== "" && playersChoice[playersWin[i][3]] !== "" && playersChoice[playersWin[i][0]] === playersChoice[playersWin[i][1]] && playersChoice[playersWin[i][1]] === playersChoice[playersWin[i][2]] ){
+
+    
+      for( let i = 0; i<playersWin.length; i++){
+        if( playersChoice[playersWin[i][0]] !== "" && playersChoice[playersWin[i][1]] !== "" && playersChoice[playersWin[i][3]] !== "" && playersChoice [playersWin[i][0]] === playersChoice[playersWin[i][1]] && playersChoice[playersWin[i][1]] === playersChoice[playersWin[i][2]] ){
   
-          result =  true +" this is the array "+ playersWin[i]+ "the Player choice is"+playersChoice[playersWin[i][2]];
+         result = true;
+        }
+        
       }
-  }
    
-   
-   return result;
+ 
+
    
   }
 
