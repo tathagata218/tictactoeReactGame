@@ -13,11 +13,12 @@ class App extends Component {
   this.state.board[index] = this.state.current_player;
   this.setState({
     board : this.state.board,
-    current_player : this.state.player_one_symbol === this.state.current_player ?  this.state.player_two_symbol :  this.state.player_one_symbol  
+    current_player : this.state.player_one_symbol === this.state.current_player ?  this.state.player_two_symbol :  this.state.player_one_symbol , 
+    winner : this.checkWinner()
   });
   }
 
-  this.checkWinner();
+ 
   console.log(this.state);
   }
 
@@ -87,16 +88,15 @@ class App extends Component {
     let boardArr = this.state.board;
     let current_turn = this.state.current_player;
 
-    let results = winnerCombo.find(function(stuff){
+   return winnerCombo.find(function(stuff){
     if(boardArr[stuff[0]] !== "" && boardArr[stuff[1]] !== ""  && boardArr[stuff[2]] !== ""  && boardArr[stuff[0]] === boardArr[stuff[1]] && boardArr[stuff[1]] === boardArr[stuff[2]]) {
 
-      this.setState({winner  : current_turn});
+      return current_turn;
     }
     else {
       return null;
     }
-        return results;
-        console.log("im in the checkwinner function")
+       
     });
     
     
