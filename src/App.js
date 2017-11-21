@@ -18,8 +18,8 @@ class App extends Component {
   });
   }
 
- 
-  console.log(this.state);
+  console.log(index);
+  // console.log(this.state);
   }
 
   divClickfuncOne (index){
@@ -84,7 +84,7 @@ class App extends Component {
   
 
   checkWinner = () => {
-    let winnerCombo = [[0,1,2],[3,4,5],[7,8,9],[0,3,7],[1,8,9],[2,5,9],[0,4,8],[2,4,7]];
+    let winnerCombo = [[0,1,2],[3,4,5],[4,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
     let boardArr = this.state.board;
     let current_turn = this.state.current_player;
 
