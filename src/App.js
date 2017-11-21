@@ -57,7 +57,7 @@ class App extends Component {
       board : [
         '','','','','','','','',''
       ],
-      winner : null
+      winner : this.checkWinner()
     });
     this.render();
   }
@@ -88,18 +88,21 @@ class App extends Component {
     let boardArr = this.state.board;
     let current_turn = this.state.current_player;
 
-   return winnerCombo.find(function(stuff){
-    if(boardArr[stuff[0]] !== "" && boardArr[stuff[1]] !== ""  && boardArr[stuff[2]] !== ""  && boardArr[stuff[0]] === boardArr[stuff[1]] && boardArr[stuff[1]] === boardArr[stuff[2]]) {
+   let results =  "this part works";
+   
+   
+  //  winnerCombo.find(function(stuff){
+  //   if(boardArr[stuff[0]] !== "" && boardArr[stuff[1]] !== ""  && boardArr[stuff[2]] !== ""  && boardArr[stuff[0]] === boardArr[stuff[1]] && boardArr[stuff[1]] === boardArr[stuff[2]]) {
 
-      return current_turn;
-    }
-    else {
-      return null;
-    }
+  //     return current_turn;
+  //   }
+  //   else {
+  //     return false;
+  //   }
        
-    });
+  //   });
     
-    
+  return current_turn;
    
   }
 
