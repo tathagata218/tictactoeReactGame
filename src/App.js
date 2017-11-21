@@ -90,12 +90,13 @@ class App extends Component {
     let results = winnerCombo.find(function(stuff){
     if(boardArr[stuff[0]] !== "" && boardArr[stuff[1]] !== ""  && boardArr[stuff[2]] !== ""  && boardArr[stuff[0]] === boardArr[stuff[1]] && boardArr[stuff[1]] === boardArr[stuff[2]]) {
 
-      return current_turn;
+      this.setState({winner  : current_turn});
     }
     else {
       return null;
     }
-        
+        return results;
+        console.log("im in the checkwinner function")
     });
     
     
