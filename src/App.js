@@ -85,7 +85,18 @@ class App extends Component {
   checkWinner = () => {
     let winnerCombo = [[0,1,2],[3,4,5],[7,8,9],[0,3,7],[1,8,9],[2,5,9],[0,4,8],[2,4,7]];
     let boardArr = this.state.board;
+    let current_turn = this.state.current_player;
 
+    let results = winnerCombo.find(function(stuff){
+    if(boardArr[stuff[0]] !== "" && boardArr[stuff[1]] !== ""  && boardArr[stuff[2]] !== ""  && boardArr[stuff[0]] === boardArr[stuff[1]] && boardArr[stuff[1]] === boardArr[stuff[2]]) {
+
+      return current_turn;
+    }
+    else {
+      return null;
+    }
+        
+    });
     
     
    
