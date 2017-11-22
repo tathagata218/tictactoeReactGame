@@ -20,7 +20,7 @@ class App extends Component {
   });
   }
  
-  this.checkWinner();
+ setTimeout(1000,this.checkWinner);
   
   console.log(this.state);
   }
@@ -91,7 +91,7 @@ class App extends Component {
     let playersChoice = this.state.board;
     let result;
     
-    playersWin.forEach(function(data){if( playersChoice[data[0]] !== "" && playersChoice[data[1]] !== "" && playersChoice[data[2]] !== "" && playersChoice[data[0]] === playersChoice[data[1]] && playersChoice[data[1]] === playersChoice[data[2]] ){result =  true;}});
+    playersWin.forEach(function(data){if( playersChoice[data[0]] !== "" && playersChoice[data[1]] !== "" && playersChoice[data[2]] !== "" ){result =  true;}});
 
     this.setState({
       winner : result
