@@ -5,22 +5,21 @@ class App extends Component {
   
   state = { 
       button_clicked : true
- 
           };
 
   divClickfuncTwo  (index)  {
   
   if( this.state.board[index] === ""){
   this.state.board[index] = this.state.current_player;
-  let boardInfo= this.state.board;
+
   this.setState({
     board : this.state.board,
     current_player : this.state.player_one_symbol === this.state.current_player ?  this.state.player_two_symbol :  this.state.player_one_symbol , 
-    winner :  null
+    winner :this.checkWinner()
   });
   }
  
- setTimeout(1000,this.checkWinner);
+ 
   
   console.log(this.state);
   }
@@ -87,14 +86,19 @@ class App extends Component {
   
 
    checkWinner = () => {
-    let playersWin = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
-    let playersChoice = this.state.board;
-    let result;
+    // let playersWin = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+    // let playersChoice = this.state.board;
+    // let result;
     
-    playersWin.forEach(function(data){if( playersChoice[data[0]] !== "" && playersChoice[data[1]] !== "" && playersChoice[data[2]] !== "" ){result =  true;}});
-
-    this.setState({
-      winner : result
+    let currentTurn = this.state.current_player
+    let symbols = this.state.board
+    let winningCombos = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
+    return winningCombos.find((combo) => {
+      if(symbols[combo[0]] !== "" && symbols[combo[1]] !== ""  && symbols[combo[2]] !== ""  && symbols[combo[0]] === symbols[combo[1]] && symbols[combo[1]] === symbols[combo[2]]) {
+        return currentTurn
+      } else {
+        return false
+      }
     })
     }
 
