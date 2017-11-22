@@ -9,16 +9,18 @@ class App extends Component {
           };
 
   divClickfuncTwo  (index)  {
+  
   if( this.state.board[index] === ""){
   this.state.board[index] = this.state.current_player;
+  let boardInfo= this.state.board;
   this.setState({
     board : this.state.board,
     current_player : this.state.player_one_symbol === this.state.current_player ?  this.state.player_two_symbol :  this.state.player_one_symbol , 
-    winner : this.checkWinner()
+    winner :  [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]].forEach(function(data){if( boardInfo[data[0]] === boardInfo[data[1]] && boardInfo[data[1]] === boardInfo[data[2]] ){return true;}})
   });
   }
-
-  console.log(this.checkWinner())
+ 
+  
   console.log(this.state);
   }
 
@@ -83,25 +85,21 @@ class App extends Component {
     
   
 
-  checkWinner = () => {
+   checkWinner = () => {
     let playersWin = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
     let playersChoice = this.state.board;
-    let result;
-
-
     
-      for( let i = 0; i<playersWin.length; i++){
-        if( playersChoice[playersWin[i][0]] !== "" && playersChoice[playersWin[i][1]] !== "" && playersChoice[playersWin[i][3]] !== "" && playersChoice [playersWin[i][0]] === playersChoice[playersWin[i][1]] && playersChoice[playersWin[i][1]] === playersChoice[playersWin[i][2]] ){
-  
-         result = true;
-        }
-        
-      }
-   
- 
 
-   
-  }
+
+    // return playersWin.forEach(function(data){
+    //   if( playersChoice [data[0]] === playersChoice[data[1]] && playersChoice[data[1]] === playersChoice[data[2]] )      
+    //     {
+    //       return playersChoice[data[1]];
+    //     }
+        
+    // });
+    return playersChoice; 
+    }
 
   render() {
     
