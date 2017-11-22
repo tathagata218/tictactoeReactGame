@@ -16,10 +16,11 @@ class App extends Component {
   this.setState({
     board : this.state.board,
     current_player : this.state.player_one_symbol === this.state.current_player ?  this.state.player_two_symbol :  this.state.player_one_symbol , 
-    winner :  [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]].forEach(function(data){if( boardInfo[data[0]] === boardInfo[data[1]] && boardInfo[data[1]] === boardInfo[data[2]] ){return true;}})
+    winner :  null
   });
   }
  
+  this.checkWinner();
   
   console.log(this.state);
   }
@@ -88,17 +89,13 @@ class App extends Component {
    checkWinner = () => {
     let playersWin = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
     let playersChoice = this.state.board;
+    let result;
     
+    playersWin.forEach(function(data){if( playersChoice[data[0]] !== "" && playersChoice[data[1]] !== "" && playersChoice[data[2]] !== "" && playersChoice[data[0]] === playersChoice[data[1]] && playersChoice[data[1]] === playersChoice[data[2]] ){result =  true;}});
 
-
-    // return playersWin.forEach(function(data){
-    //   if( playersChoice [data[0]] === playersChoice[data[1]] && playersChoice[data[1]] === playersChoice[data[2]] )      
-    //     {
-    //       return playersChoice[data[1]];
-    //     }
-        
-    // });
-    return playersChoice; 
+    this.setState({
+      winner : result
+    })
     }
 
   render() {
