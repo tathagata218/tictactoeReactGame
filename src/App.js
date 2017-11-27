@@ -21,8 +21,9 @@ class App extends Component {
  
  
   
-  console.log(this.state);
-  }
+  // console.log(this.state);
+    
+}
 
   divClickfuncOne (index){
   
@@ -97,7 +98,8 @@ class App extends Component {
         return false
       }
     })
-    }
+    this.render()  
+  }
 
   render() {
     
