@@ -151,6 +151,15 @@ class App extends Component {
       </div>
       );
     }
+    else if (Array.isArray(this.state.winner) ){
+      return (
+        <div>
+          <div className="mainDispalay">
+            <h1>The winner is {this.state.board[this.state.winner[0]]}</h1>
+          </div>
+        </div>
+      );
+    }
   };
 
 }
