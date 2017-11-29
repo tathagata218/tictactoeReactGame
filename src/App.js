@@ -93,8 +93,8 @@ class App extends Component {
     let winner = this.state.winningCombos;
     let result;
     for( let i=0; i< winner; i++){
-      let winnerItm = winner[i]; 
-      if( board[winnerItm[0]]===board[winnerItm[1]] && board[winnerItm[1]]===board[winnerItm[2]] && board[winnerItm[0]]===board[winnerItm[2]]){
+      const [a,b,c] = winner[i]; 
+      if( board[a] === board[c] && board[c] === board[b] && board[b] === board[a] && board[b]===board[c] && board[c] === board[a]){
         result = true;
       }
       else{
