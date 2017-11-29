@@ -9,7 +9,7 @@ class App extends Component {
       
           };
 
-  divClickfuncTwo  (index)  {
+  divClickfuncTwo = (index) =>  {
   
   if( this.state.board[index] === "" && !this.state.winner){
   this.state.board[index] = this.state.current_player;
@@ -17,14 +17,16 @@ class App extends Component {
   this.setState({
     board : this.state.board,
     current_player : this.state.player_one_symbol === this.state.current_player ?  this.state.player_two_symbol :  this.state.player_one_symbol , 
-    winner : this.checkWinner()
+    winner : (this.state.board[0] === this.state.board[1] && this.state.board[0] === this.state.board[2] && this.state.board[1] === this.state.board[2]) ? true : false
+    
+     
+    
   });
   }
  
  
   
   console.log(this.state);
-  console.log(index);
   
 }
 
@@ -95,10 +97,10 @@ class App extends Component {
     
     for( let i=0; i< winner; i++){
       if( board[winner[i][0]]===board[winner[i][1]] &&board[winner[i][0]]===board[winner[i][2]] &&board[winner[i][1]]===board[winner[i][0]] && board[winner[i][1]]===board[winner[i][2]] && board[winner[i][2]]===board[winner[i][1]] && board[winner[i][2]]===board[winner[i][0]]){
-        this.state.winner = true;
+        return  true;
       }
       else{
-        this.state.winner = null;
+        return null;
       }
     }
 
