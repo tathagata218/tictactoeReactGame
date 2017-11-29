@@ -18,14 +18,13 @@ class App extends Component {
     board : this.state.board,
     current_player : this.state.player_one_symbol === this.state.current_player ?  this.state.player_two_symbol :  this.state.player_one_symbol , 
     winner : this.checkWinner()
-    }
   });
   }
  
  
   
   console.log(this.state);
-
+  console.log(index);
   
 }
 
@@ -93,17 +92,16 @@ class App extends Component {
    checkWinner = () => {
     let board = this.state.board;
     let winner = this.state.winningCombos;
-    let result;
+    
     for( let i=0; i< winner; i++){
-      const [a,b,c] = winner[i]; 
-      if( board[a] === board[c] && board[c] === board[b] && board[b] === board[a] && board[b]===board[c] && board[c] === board[a]){
-        result = true;
+      if( board[winner[i][0]]===board[winner[i][1]] &&board[winner[i][0]]===board[winner[i][2]] &&board[winner[i][1]]===board[winner[i][0]] && board[winner[i][1]]===board[winner[i][2]] && board[winner[i][2]]===board[winner[i][1]] && board[winner[i][2]]===board[winner[i][0]]){
+        this.state.winner = true;
       }
       else{
-        result = false;
+        this.state.winner = null;
       }
     }
-    return result;
+
   }
 
   render() {
