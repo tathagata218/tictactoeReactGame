@@ -11,20 +11,22 @@ class App extends Component {
 
   divClickfuncTwo  (index)  {
   
-  if( this.state.board[index] === ""){
+  if( this.state.board[index] === "" && !this.state.winner){
   this.state.board[index] = this.state.current_player;
 
   this.setState({
     board : this.state.board,
     current_player : this.state.player_one_symbol === this.state.current_player ?  this.state.player_two_symbol :  this.state.player_one_symbol , 
-    winner :this.checkWinner()
+    winner : this.checkWinner()
+    }
   });
   }
  
  
   
   console.log(this.state);
-    this.render();
+
+  
 }
 
   divClickfuncOne (index){
