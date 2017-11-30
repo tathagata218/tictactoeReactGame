@@ -17,17 +17,19 @@ class App extends Component {
   this.setState({
     board : this.state.board,
     current_player : this.state.player_one_symbol === this.state.current_player ?  this.state.player_two_symbol :  this.state.player_one_symbol , 
-    winner : (this.state.board[0] === this.state.board[1] && this.state.board[0] === this.state.board[2] && this.state.board[1] === this.state.board[2]) ? true : false
+    winner : (this.state.board[0] === this.state.board[1] && this.state.board[0] === this.state.board[2] && this.state.board[1] === this.state.board[2]) ? this.state.board[0] : false
     
      
     
   });
+
+ 
   }
  
  
-  
+  this.render();
   console.log(this.state);
-  
+ 
 }
 
   divClickfuncOne (index){
@@ -46,7 +48,7 @@ class App extends Component {
       board : [
         '','','','','','','','',''
       ],
-      winner : null
+      winner : false
     });
 
 
@@ -65,7 +67,7 @@ class App extends Component {
       board : [
         '','','','','','','','',''
       ],
-      winner : null
+      winner : false
     });
     this.render();
   }
@@ -82,7 +84,7 @@ class App extends Component {
       board : [
         '','','','','','','','',''
       ],
-      winner : null
+      winner : false
     });
     
     this.render();
@@ -158,11 +160,11 @@ class App extends Component {
       </div>
       );
     }
-    else if (Array.isArray(this.state.winner) ){
+    else if (this.state.winner !== false ){
       return (
         <div>
           <div className="mainDispalay">
-            <h1>The winner is {this.state.board[this.state.winner[0]]}</h1>
+            <h1>The winner is {this.state.winner}</h1>
           </div>
         </div>
       );
