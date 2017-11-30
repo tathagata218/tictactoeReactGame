@@ -17,7 +17,7 @@ class App extends Component {
   this.setState({
     board : this.state.board,
     current_player : this.state.player_one_symbol === this.state.current_player ?  this.state.player_two_symbol :  this.state.player_one_symbol , 
-    winner : (this.state.board[0] === this.state.board[1] && this.state.board[0] === this.state.board[2] && this.state.board[1] === this.state.board[2]) ? this.state.board[0] : false
+    winner1 : (this.state.board[0] === this.state.board[1] && this.state.board[0] === this.state.board[2] && this.state.board[1] === this.state.board[2]) ? this.state.board[0] : false
     
      
     
@@ -141,7 +141,7 @@ class App extends Component {
       </div>
       );
     }
-    else if (this.state.two_player_status){
+    else if (this.state.two_player_status && this.state.winner1 === false){
       return(
         <div>
           <div className="mainDispalay">
@@ -160,11 +160,12 @@ class App extends Component {
       </div>
       );
     }
-    else if (this.state.winner !== false ){
+    else if (this.state.winner1 !== false ){
       return (
         <div>
           <div className="mainDispalay">
             <h1>The winner is {this.state.winner}</h1>
+            <button onClick={this.goBack}>Go Back Start</button>
           </div>
         </div>
       );
