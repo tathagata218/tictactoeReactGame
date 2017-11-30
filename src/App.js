@@ -17,7 +17,11 @@ class App extends Component {
   this.setState({
     board : this.state.board,
     current_player : this.state.player_one_symbol === this.state.current_player ?  this.state.player_two_symbol :  this.state.player_one_symbol , 
-    winner1 : (this.state.board[0] === this.state.board[1] && this.state.board[0] === this.state.board[2] && this.state.board[1] === this.state.board[2]) ? this.state.board[0] : false
+    winner1 : (this.state.board[0] === this.state.board[1] && this.state.board[0] === this.state.board[2] && this.state.board[1] === this.state.board[2]) ? this.state.board[0] : false,
+    winner2 : (this.state.board[3] === this.state.board[4] && this.state.board[3] === this.state.board[5] && this.state.board[5] === this.state.board[4]) ? this.state.board[5] : false,
+    winner3 : (this.state.board[0] === this.state.board[1] && this.state.board[0] === this.state.board[2] && this.state.board[1] === this.state.board[2]) ? this.state.board[0] : false,
+    winner4 : (this.state.board[0] === this.state.board[1] && this.state.board[0] === this.state.board[2] && this.state.board[1] === this.state.board[2]) ? this.state.board[0] : false,
+    winner5 : (this.state.board[0] === this.state.board[1] && this.state.board[0] === this.state.board[2] && this.state.board[1] === this.state.board[2]) ? this.state.board[0] : false
     
      
     
