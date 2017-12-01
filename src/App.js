@@ -187,6 +187,16 @@ class App extends Component {
         </div>
       );
     }
+    else if (this.state.winner3 !== false ){
+      return (
+        <div>
+          <div className="mainDispalay">
+            <h1>The winner is {this.state.winner3}</h1>
+            <button onClick={this.goBack}>Go Back Start</button>
+          </div>
+        </div>
+      );
+    }
   };
 
 }
