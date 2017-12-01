@@ -148,7 +148,7 @@ class App extends Component {
       </div>
       );
     }
-    else if (this.state.two_player_status && this.state.winner1 === false){
+    else if (this.state.two_player_status && this.state.winner1 === false &&this.state.winner2 === false &&this.state.winner3 === false &&this.state.winner4 === false &&this.state.winner5 === false &&this.state.winner6 === false &&this.state.winner7 === false &&  this.state.winner8 === false ){
       return(
         <div>
           <div className="mainDispalay">
