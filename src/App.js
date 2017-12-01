@@ -171,7 +171,17 @@ class App extends Component {
       return (
         <div>
           <div className="mainDispalay">
-            <h1>The winner is {this.state.winner}</h1>
+            <h1>The winner is {this.state.winner1}</h1>
+            <button onClick={this.goBack}>Go Back Start</button>
+          </div>
+        </div>
+      );
+    }
+    else if (this.state.winner2 !== false ){
+      return (
+        <div>
+          <div className="mainDispalay">
+            <h1>The winner is {this.state.winner2}</h1>
             <button onClick={this.goBack}>Go Back Start</button>
           </div>
         </div>
