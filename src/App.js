@@ -11,20 +11,20 @@ class App extends Component {
 
   divClickfuncTwo = (index) =>  {
   
-  if( this.state.board[index] === "" && !this.state.winner1 && !this.state.winner2 && !this.state.winner3 && !this.state.winner4&& !this.state.winner5&& !this.state.winner6&& !this.state.winner7&& !this.state.winner8){
+  if( this.state.board[index] === "" && !this.state.winner1 && !this.state.winner2 && !this.state.winner3 && !this.state.winner4&& !this.state.winner5 && !this.state.winner6 && !this.state.winner7 && !this.state.winner8){
   this.state.board[index] = this.state.current_player;
 
   this.setState({
     board : this.state.board,
     current_player : this.state.player_one_symbol === this.state.current_player ?  this.state.player_two_symbol :  this.state.player_one_symbol , 
-    winner1 : (this.state.board[0] === this.state.board[1] && this.state.board[0] === this.state.board[2] && this.state.board[1] === this.state.board[2]) ? this.state.board[0] : false,
-    winner2 : (this.state.board[3] === this.state.board[4] && this.state.board[3] === this.state.board[5] && this.state.board[5] === this.state.board[4]) ? this.state.board[5] : false,
-    winner3 : (this.state.board[6] === this.state.board[7] && this.state.board[6] === this.state.board[8] && this.state.board[7] === this.state.board[8]) ? this.state.board[7] : false,
-    winner4 : (this.state.board[0] === this.state.board[3] && this.state.board[0] === this.state.board[6] && this.state.board[3] === this.state.board[6]) ? this.state.board[3] : false,
-    winner5 : (this.state.board[1] === this.state.board[4] && this.state.board[1] === this.state.board[7] && this.state.board[4] === this.state.board[7]) ? this.state.board[4] : false,
-    winner6 : (this.state.board[2] === this.state.board[5] && this.state.board[2] === this.state.board[8] && this.state.board[5] === this.state.board[8]) ? this.state.board[0] : false,
-    winner7 : (this.state.board[0] === this.state.board[4] && this.state.board[0] === this.state.board[8] && this.state.board[4] === this.state.board[8]) ? this.state.board[4] : false,
-    winner8 : (this.state.board[2] === this.state.board[4] && this.state.board[2] === this.state.board[6] && this.state.board[4] === this.state.board[6]) ? this.state.board[4] : false
+    winner1 : (this.state.board[0] !== "" && this.state.board[1] !== "" && this.state.board[2] !== "" &&this.state.board[0] === this.state.board[1] && this.state.board[0] === this.state.board[2] && this.state.board[1] === this.state.board[2]) ? this.state.board[0] : false,
+     //winner2 : (this.state.board[3] === this.state.board[4] && this.state.board[3] === this.state.board[5] && this.state.board[5] === this.state.board[4]) ? this.state.board[5] : false,
+     winner3 : (this.state.board[6] !== "" && this.state.board[7] !== "" && this.state.board[8] !== "" && this.state.board[6] === this.state.board[7] && this.state.board[6] === this.state.board[8] && this.state.board[7] === this.state.board[8]) ? this.state.board[7] : false,
+    // winner4 : (this.state.board[0] === this.state.board[3] && this.state.board[0] === this.state.board[6] && this.state.board[3] === this.state.board[6]) ? this.state.board[3] : false,
+    // winner5 : (this.state.board[1] === this.state.board[4] && this.state.board[1] === this.state.board[7] && this.state.board[4] === this.state.board[7]) ? this.state.board[4] : false,
+    // winner6 : (this.state.board[2] === this.state.board[5] && this.state.board[2] === this.state.board[8] && this.state.board[5] === this.state.board[8]) ? this.state.board[0] : false,
+    // winner7 : (this.state.board[0] === this.state.board[4] && this.state.board[0] === this.state.board[8] && this.state.board[4] === this.state.board[8]) ? this.state.board[4] : false,
+    // winner8 : (this.state.board[2] === this.state.board[4] && this.state.board[2] === this.state.board[6] && this.state.board[4] === this.state.board[6]) ? this.state.board[4] : false
     
      
     
@@ -157,7 +157,7 @@ class App extends Component {
       </div>
       );
     }
-    else if (this.state.two_player_status && this.state.winner1 === false &&this.state.winner2 === false &&this.state.winner3 === false &&this.state.winner4 === false &&this.state.winner5 === false &&this.state.winner6 === false &&this.state.winner7 === false &&  this.state.winner8 === false ){
+    else if (this.state.two_player_status && this.state.winner1 === false && this.state.winner2 === false && this.state.winner3 === false && this.state.winner4 === false &&this.state.winner5 === false && this.state.winner6 === false && this.state.winner7 === false &&  this.state.winner8 === false ){
       return(
         <div>
           <div className="mainDispalay">
@@ -180,7 +180,7 @@ class App extends Component {
       return (
         <div>
           <div className="mainDispalay">
-            <h1>The winner is {this.state.winner1}</h1>
+            <h1 value= "test1">The winner is {this.state.winner1}</h1>
             <button onClick={this.goBack}>Go Back Start</button>
           </div>
         </div>
@@ -190,7 +190,7 @@ class App extends Component {
       return (
         <div>
           <div className="mainDispalay">
-            <h1>The winner is {this.state.winner2}</h1>
+            <h1 value= "test2">The winner is {this.state.winner2}</h1>
             <button onClick={this.goBack}>Go Back Start</button>
           </div>
         </div>
@@ -200,7 +200,7 @@ class App extends Component {
       return (
         <div>
           <div className="mainDispalay">
-            <h1>The winner is {this.state.winner3}</h1>
+            <h1 value= "test3">The winner is {this.state.winner3}</h1>
             <button onClick={this.goBack}>Go Back Start</button>
           </div>
         </div>
@@ -210,7 +210,7 @@ class App extends Component {
       return (
         <div>
           <div className="mainDispalay">
-            <h1>The winner is {this.state.winner4}</h1>
+            <h1 value= "test4">The winner is {this.state.winner4}</h1>
             <button onClick={this.goBack}>Go Back Start</button>
           </div>
         </div>
@@ -220,7 +220,7 @@ class App extends Component {
       return (
         <div>
           <div className="mainDispalay">
-            <h1>The winner is {this.state.winner5}</h1>
+            <h1 value= "test5">The winner is {this.state.winner5}</h1>
             <button onClick={this.goBack}>Go Back Start</button>
           </div>
         </div>
@@ -230,7 +230,7 @@ class App extends Component {
       return (
         <div>
           <div className="mainDispalay">
-            <h1>The winner is {this.state.winner6}</h1>
+            <h1 value= "test6">The winner is {this.state.winner6}</h1>
             <button onClick={this.goBack}>Go Back Start</button>
           </div>
         </div>
@@ -240,7 +240,7 @@ class App extends Component {
       return (
         <div>
           <div className="mainDispalay">
-            <h1>The winner is {this.state.winner7}</h1>
+            <h1 value= "test7">The winner is {this.state.winner7}</h1>
             <button onClick={this.goBack}>Go Back Start</button>
           </div>
         </div>
@@ -250,7 +250,7 @@ class App extends Component {
       return (
         <div>
           <div className="mainDispalay">
-            <h1>The winner is {this.state.winner8}</h1>
+            <h1 value= "test8">The winner is {this.state.winner8}</h1>
             <button onClick={this.goBack}>Go Back Start</button>
           </div>
         </div>
