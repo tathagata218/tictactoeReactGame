@@ -55,7 +55,15 @@ class App extends Component {
       board : [
         '','','','','','','','',''
       ],
-      winner : false
+      winner1 : false,
+      winner2 : false,
+      winner3 : false,
+      winner4 : false,
+      winner5 : false,
+      winner6 : false,
+      winner7 : false,
+      winner8 : false,
+
     });
 
 
@@ -74,7 +82,14 @@ class App extends Component {
       board : [
         '','','','','','','','',''
       ],
-      winner : false
+      winner1 : false,
+      winner2 : false,
+      winner3 : false,
+      winner4 : false,
+      winner5 : false,
+      winner6 : false,
+      winner7 : false,
+      winner8 : false,
     });
     this.render();
   }
@@ -91,7 +106,14 @@ class App extends Component {
       board : [
         '','','','','','','','',''
       ],
-      winner : false
+      winner1 : false,
+      winner2 : false,
+      winner3 : false,
+      winner4 : false,
+      winner5 : false,
+      winner6 : false,
+      winner7 : false,
+      winner8 : false,
     });
     
     this.render();
@@ -100,20 +122,7 @@ class App extends Component {
     
   
 
-   checkWinner = () => {
-    let board = this.state.board;
-    let winner = this.state.winningCombos;
-    
-    for( let i=0; i< winner; i++){
-      if( board[winner[i][0]]===board[winner[i][1]] &&board[winner[i][0]]===board[winner[i][2]] &&board[winner[i][1]]===board[winner[i][0]] && board[winner[i][1]]===board[winner[i][2]] && board[winner[i][2]]===board[winner[i][1]] && board[winner[i][2]]===board[winner[i][0]]){
-        return  true;
-      }
-      else{
-        return null;
-      }
-    }
-
-  }
+ 
 
   render() {
     
