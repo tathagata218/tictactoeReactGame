@@ -4,9 +4,7 @@ import './App.css';
 class App extends Component {
   
   state = { 
-      button_clicked : true,
-      winningCombos : [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
-      
+      button_clicked : true      
           };
 
   divClickfuncTwo = (index) =>  {
@@ -65,13 +63,12 @@ class App extends Component {
   }
 
   onePlayer =  () => {
-
+if( this.state.current_player !== undefined){
     this.setState({
       button_clicked : false,
       player_info : "Single Player",
       player_one_symbol : "X",
       player_two_symbol : "O",
-      current_player : "X",
       single_player_status : true,
       board : [
         '','','','','','','','',''
@@ -86,19 +83,21 @@ class App extends Component {
       winner8 : false,
 
     });
-
+  }
+  else{
+    alert("Please select X or O");
+  }
 
     this.render();
   }
   
   twoPlayer = () => {
-   
+    if( this.state.current_player !== undefined){
    this.setState ({
       button_clicked : false,
       player_info : "Two Player",
       player_one_symbol : "X",
       player_two_symbol : "O",
-      current_player : "X",
       two_player_status : true,
       board : [
         '','','','','','','','',''
@@ -112,6 +111,10 @@ class App extends Component {
       winner7 : false,
       winner8 : false,
     });
+  }
+  else {
+    alert("Please select X or O");
+  }
     this.render();
   }
 
@@ -121,7 +124,6 @@ class App extends Component {
       player_info : "Single Player",
       player_one_symbol : "X",
       player_two_symbol : "O",
-      current_player : "X",
       single_player_status : false,
       two_player_status : false,
       board : [
@@ -141,7 +143,18 @@ class App extends Component {
    
     } 
     
-  
+    xSelector = () =>{
+      this.setState({
+        current_player : "X"
+      });
+      console.s
+    } 
+    
+    oSelector = () =>{
+      this.setState({
+        current_player : "O"
+      });
+    } 
 
  
 
@@ -153,12 +166,13 @@ class App extends Component {
         <div className="mainDispalay">
           <h1>Tic Tac Toe Game</h1>
           <div>
+            <h3>What whould you like to be X or O ?</h3>
+            <button className="btnClick" onClick={this.xSelector}>X</button>
+            <button className="btnClick" onClick={this.oSelector}>O</button> 
+            <h3>How do you want to play ?</h3> 
             <button className="btnClick" onClick={this.onePlayer} >Player VS Computer</button>
             <button className="btnClick" onClick={this.twoPlayer} >Player VS Player</button>
-            <h3>What whould you like to be X or O</h3>
-            <button className="btnClick" onClick={this.xSelector}>X</button>
-            <button className="btnClick" onClick={this.oSelector}>O</button>         
-            </div>
+          </div>
         </div>
       </div>
     );
