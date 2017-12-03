@@ -40,11 +40,11 @@ class App extends Component {
   divClickfuncOne = (index) => { 
     if( this.state.board[index] === "" && !this.state.winner1 && !this.state.winner2 && !this.state.winner3 && !this.state.winner4&& !this.state.winner5 && !this.state.winner6 && !this.state.winner7 && !this.state.winner8){
       
-      // this.state.board[index] = this.state.current_player;
+     this.state.board[index] = this.state.current_player;
     
       this.setState({
         board : this.state.board,
-        current_player : this.state.player_one_symbol === this.state.current_player ?  this.state.player_two_symbol :  this.state.player_one_symbol , 
+        current_player :  this.state.current_player, 
         emptyIndexComp : this.state.board.map((item, index , arr ) => {if( arr[index] == '' ) {return index}}).filter((item) => item !== undefined),    
         winner1 : (this.state.board[0] !== "" && this.state.board[1] !== "" && this.state.board[2] !== "" &&this.state.board[0] === this.state.board[1] && this.state.board[0] === this.state.board[2] && this.state.board[1] === this.state.board[2]) ? this.state.board[0] : false,
         winner2 : (this.state.board[3] !== "" && this.state.board[4] !== "" && this.state.board[5] !== "" && this.state.board[3] === this.state.board[4] && this.state.board[3] === this.state.board[5] && this.state.board[5] === this.state.board[4]) ? this.state.board[5] : false,
