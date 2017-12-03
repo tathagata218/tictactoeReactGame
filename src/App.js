@@ -41,14 +41,6 @@ class App extends Component {
     if( this.state.board[index] === "" && !this.state.winner1 && !this.state.winner2 && !this.state.winner3 && !this.state.winner4&& !this.state.winner5 && !this.state.winner6 && !this.state.winner7 && !this.state.winner8){
       
       this.state.board[index] = this.state.current_player;
-      
-      let boardInfo =  this.state.board;
-      let emptyArr =[];
-      for(let i =0; i<boardInfo.lenght; i++){
-        if (boardInfo[i] ==''){
-          emptyArr.push(i);
-        } 
-      }
     
       this.setState({
         board : this.state.board,
@@ -166,15 +158,7 @@ if( this.state.current_player !== undefined){
       });
     } 
 
-    randomSelesctor = () => {
-      let boardInfo =  this.state.board;
-      let emptyArr =[];
-      for(let i =0; i<boardInfo.lenght; i++){
-        if (boardInfo[i] ==''){
-          emptyArr.push(i);
-        } 
-      }
-    }
+    
 
   render() {
     
