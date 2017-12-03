@@ -157,7 +157,13 @@ if( this.state.current_player !== undefined){
       });
     } 
 
- 
+    randomSelesctor = ()=>{
+      let boardInfo =  this.state.board;
+      let empty 
+      for(let i =0; i<boardInfo.lenght; i++){
+        if 
+      }
+    }
 
   render() {
     
