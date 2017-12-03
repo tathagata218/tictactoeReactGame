@@ -41,11 +41,19 @@ class App extends Component {
     if( this.state.board[index] === "" && !this.state.winner1 && !this.state.winner2 && !this.state.winner3 && !this.state.winner4&& !this.state.winner5 && !this.state.winner6 && !this.state.winner7 && !this.state.winner8){
       
       this.state.board[index] = this.state.current_player;
+      
+      let boardInfo =  this.state.board;
+      let emptyArr =[];
+      for(let i =0; i<boardInfo.lenght; i++){
+        if (boardInfo[i] ==''){
+          emptyArr.push(i);
+        } 
+      }
     
       this.setState({
         board : this.state.board,
         current_player : this.state.player_one_symbol === this.state.current_player ?  this.state.player_two_symbol :  this.state.player_one_symbol , 
-        
+        emptyIndexComp : emptyArr,        
         winner1 : (this.state.board[0] !== "" && this.state.board[1] !== "" && this.state.board[2] !== "" &&this.state.board[0] === this.state.board[1] && this.state.board[0] === this.state.board[2] && this.state.board[1] === this.state.board[2]) ? this.state.board[0] : false,
         winner2 : (this.state.board[3] !== "" && this.state.board[4] !== "" && this.state.board[5] !== "" && this.state.board[3] === this.state.board[4] && this.state.board[3] === this.state.board[5] && this.state.board[5] === this.state.board[4]) ? this.state.board[5] : false,
         winner3 : (this.state.board[6] !== "" && this.state.board[7] !== "" && this.state.board[8] !== "" && this.state.board[6] === this.state.board[7] && this.state.board[6] === this.state.board[8] && this.state.board[7] === this.state.board[8]) ? this.state.board[7] : false,
@@ -60,6 +68,7 @@ class App extends Component {
       });
     
     }
+    console.log(this.state);
 
   }
 
@@ -157,11 +166,13 @@ if( this.state.current_player !== undefined){
       });
     } 
 
-    randomSelesctor = ()=>{
+    randomSelesctor = () => {
       let boardInfo =  this.state.board;
-      let empty 
+      let emptyArr =[];
       for(let i =0; i<boardInfo.lenght; i++){
-        if 
+        if (boardInfo[i] ==''){
+          emptyArr.push(i);
+        } 
       }
     }
 
