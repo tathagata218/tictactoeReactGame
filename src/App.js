@@ -60,6 +60,15 @@ class App extends Component {
       });
     
     }
+
+    randomNum = () => {
+      let lengthRand = this.state.emptyIndexComp.length;
+      let randNum = Math.floor(Math.random()*lengthRand);
+
+      this.setState({
+        
+      });
+    }
     console.log(this.state);
 
   }
