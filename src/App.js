@@ -64,14 +64,15 @@ class App extends Component {
    const  randomNum = () => {
       let lengthRand = this.state.emptyIndexComp.length;
       let randNum = Math.floor(Math.random()*lengthRand);
-
+      this.state.board.splice(randNum,1,this.state.current_player)
       this.setState({
-        board : this.state.board.splice(randNum,1,this.state.current_player)
+        board : this.state.board
 
       });
       console.log("I am in Rand Function");
       console.log(randNum);
       console.log(this.state.board);
+      console.log(this.state.emptyIndexComp);
       this.render();
     }
 
