@@ -69,9 +69,7 @@ class App extends Component {
 
       });
       console.log("I am in Rand Function");
-      console.log(randNum);
-      console.log(this.state.board);
-      console.log(this.state.emptyIndexComp);
+   
       this.render();
     }
 
