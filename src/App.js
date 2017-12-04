@@ -38,7 +38,7 @@ class App extends Component {
 }
 
   divClickfuncOne = (index) => { 
-    if( this.state.board[index] === "" && !this.state.winner1 && !this.state.winner2 && !this.state.winner3 && !this.state.winner4&& !this.state.winner5 && !this.state.winner6 && !this.state.winner7 && !this.state.winner8){
+    if( this.state.board[index] === "" && !this.state.winner1 && !this.state.winner2 && !this.state.winner3 && !this.state.winner4&& !this.state.winner5 && !this.state.winner6 && ! this.state.winner7 && !this.state.winner8){
       
      this.state.board[index] = this.state.current_player;
     
@@ -66,7 +66,7 @@ class App extends Component {
       let randNum = Math.floor(Math.random()*lengthRand);
 
       this.setState({
-        
+
       });
     }
     console.log(this.state);
