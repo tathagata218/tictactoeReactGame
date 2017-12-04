@@ -65,6 +65,7 @@ class App extends Component {
       let randNum = Math.floor(Math.random()*lengthRand);
       this.state.board.splice(this.state.emptyIndexComp[randNum],1,this.state.comp_choice)
       this.setState({
+       
         board : this.state.board,
         winner1 : (this.state.board[0] !== "" && this.state.board[1] !== "" && this.state.board[2] !== "" &&this.state.board[0] === this.state.board[1] && this.state.board[0] === this.state.board[2] && this.state.board[1] === this.state.board[2]) ? this.state.board[0] : false,
         winner2 : (this.state.board[3] !== "" && this.state.board[4] !== "" && this.state.board[5] !== "" && this.state.board[3] === this.state.board[4] && this.state.board[3] === this.state.board[5] && this.state.board[5] === this.state.board[4]) ? this.state.board[5] : false,
@@ -78,11 +79,12 @@ class App extends Component {
       });
       console.log("I am in Rand Function");
    
-      this.render();
+ 
     }
-
+   
+    
     setTimeout(randomNum, 1500);
-
+    setTimeout(this.render,1600);
 
     console.log(this.state);
 
@@ -174,7 +176,6 @@ if( this.state.current_player !== undefined){
         current_player : "X",
         comp_choice : "O"
       });
-      console.s
     } 
     
     oSelector = () =>{
