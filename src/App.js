@@ -61,7 +61,7 @@ class App extends Component {
     
     }
 
-   randomNum  () => {
+   const  randomNum = () => {
       let lengthRand = this.state.emptyIndexComp.length;
       let randNum = Math.floor(Math.random()*lengthRand);
 
@@ -69,9 +69,11 @@ class App extends Component {
         board : this.state.board.splice(randNum,1,this.state.current_player)
 
       });
-
+      console.log("I am in Rand Function");
       this.render();
     }
+
+    setTimeout(randomNum, 1500);
 
 
     console.log(this.state);
