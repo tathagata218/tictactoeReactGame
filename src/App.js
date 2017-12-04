@@ -49,11 +49,11 @@ class App extends Component {
         winner1 : (this.state.board[0] !== "" && this.state.board[1] !== "" && this.state.board[2] !== "" &&this.state.board[0] === this.state.board[1] && this.state.board[0] === this.state.board[2] && this.state.board[1] === this.state.board[2]) ? this.state.board[0] : false,
         winner2 : (this.state.board[3] !== "" && this.state.board[4] !== "" && this.state.board[5] !== "" && this.state.board[3] === this.state.board[4] && this.state.board[3] === this.state.board[5] && this.state.board[5] === this.state.board[4]) ? this.state.board[5] : false,
         winner3 : (this.state.board[6] !== "" && this.state.board[7] !== "" && this.state.board[8] !== "" && this.state.board[6] === this.state.board[7] && this.state.board[6] === this.state.board[8] && this.state.board[7] === this.state.board[8]) ? this.state.board[7] : false,
-         winner4 : (this.state.board[0] !== "" && this.state.board[3] !== "" && this.state.board[6] !== "" && this.state.board[0] === this.state.board[3] && this.state.board[0] === this.state.board[6] && this.state.board[3] === this.state.board[6]) ? this.state.board[3] : false,
-         winner5 : (this.state.board[1] !== "" && this.state.board[4] !== "" && this.state.board[7] !== "" && this.state.board[1] === this.state.board[4] && this.state.board[1] === this.state.board[7] && this.state.board[4] === this.state.board[7]) ? this.state.board[4] : false,
-         winner6 : (this.state.board[2] !== "" && this.state.board[5] !== "" && this.state.board[8] !== "" && this.state.board[2] === this.state.board[5] && this.state.board[2] === this.state.board[8] && this.state.board[5] === this.state.board[8]) ? this.state.board[5] : false,
-         winner7 : (this.state.board[0] !== "" && this.state.board[4] !== "" && this.state.board[8] !== "" && this.state.board[0] === this.state.board[4] && this.state.board[0] === this.state.board[8] && this.state.board[4] === this.state.board[8]) ? this.state.board[4] : false,
-         winner8 : (this.state.board[2] !== "" && this.state.board[4] !== "" && this.state.board[6] !== "" && this.state.board[2] === this.state.board[4] && this.state.board[2] === this.state.board[6] && this.state.board[4] === this.state.board[6]) ? this.state.board[4] : false
+        winner4 : (this.state.board[0] !== "" && this.state.board[3] !== "" && this.state.board[6] !== "" && this.state.board[0] === this.state.board[3] && this.state.board[0] === this.state.board[6] && this.state.board[3] === this.state.board[6]) ? this.state.board[3] : false,
+        winner5 : (this.state.board[1] !== "" && this.state.board[4] !== "" && this.state.board[7] !== "" && this.state.board[1] === this.state.board[4] && this.state.board[1] === this.state.board[7] && this.state.board[4] === this.state.board[7]) ? this.state.board[4] : false,
+        winner6 : (this.state.board[2] !== "" && this.state.board[5] !== "" && this.state.board[8] !== "" && this.state.board[2] === this.state.board[5] && this.state.board[2] === this.state.board[8] && this.state.board[5] === this.state.board[8]) ? this.state.board[5] : false,
+        winner7 : (this.state.board[0] !== "" && this.state.board[4] !== "" && this.state.board[8] !== "" && this.state.board[0] === this.state.board[4] && this.state.board[0] === this.state.board[8] && this.state.board[4] === this.state.board[8]) ? this.state.board[4] : false,
+        winner8 : (this.state.board[2] !== "" && this.state.board[4] !== "" && this.state.board[6] !== "" && this.state.board[2] === this.state.board[4] && this.state.board[2] === this.state.board[6] && this.state.board[4] === this.state.board[6]) ? this.state.board[4] : false
         
          
         
@@ -78,7 +78,7 @@ class App extends Component {
 
     setTimeout(randomNum, 1500);
 
-
+    this.render();
     console.log(this.state);
 
   }
