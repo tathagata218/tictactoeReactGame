@@ -166,14 +166,16 @@ if( this.state.current_player !== undefined){
     
     xSelector = () =>{
       this.setState({
-        current_player : "X"
+        current_player : "X",
+        comp_choice : "O"
       });
       console.s
     } 
     
     oSelector = () =>{
       this.setState({
-        current_player : "O"
+        current_player : "O",
+        comp_choice : "X"
       });
     } 
 
