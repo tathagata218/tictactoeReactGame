@@ -61,7 +61,7 @@ class App extends Component {
     
     }
 
-    randomNum = () => {
+   randomNum  () => {
       let lengthRand = this.state.emptyIndexComp.length;
       let randNum = Math.floor(Math.random()*lengthRand);
 
@@ -73,7 +73,7 @@ class App extends Component {
       this.render();
     }
 
-    
+
     console.log(this.state);
 
   }
