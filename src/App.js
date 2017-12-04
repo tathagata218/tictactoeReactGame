@@ -66,9 +66,14 @@ class App extends Component {
       let randNum = Math.floor(Math.random()*lengthRand);
 
       this.setState({
+        board : this.state.board.splice(randNum,1,this.state.current_player)
 
       });
+
+      this.render();
     }
+
+    
     console.log(this.state);
 
   }
