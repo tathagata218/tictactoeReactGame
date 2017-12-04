@@ -70,6 +70,7 @@ class App extends Component {
 
       });
       console.log("I am in Rand Function");
+      console.log(this.state.board);
       this.render();
     }
 
