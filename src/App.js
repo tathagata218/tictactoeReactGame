@@ -45,7 +45,7 @@ class App extends Component {
       this.setState({
         board : this.state.board,
         current_player : this.state.current_player, 
-        emptyIndexComp : this.state.board.map((item, index , arr ) => {if( arr[index] == '' ) {return index}}).filter((item) => item !== undefined),    
+        emptyIndexComp : this.state.board.map((item, index , arr ) => {if( arr[index] === '' ) {return index}}).filter((item) => item !== undefined),    
         winner1 : (this.state.board[0] !== "" && this.state.board[1] !== "" && this.state.board[2] !== "" &&this.state.board[0] === this.state.board[1] && this.state.board[0] === this.state.board[2] && this.state.board[1] === this.state.board[2]) ? this.state.board[0] : false,
         winner2 : (this.state.board[3] !== "" && this.state.board[4] !== "" && this.state.board[5] !== "" && this.state.board[3] === this.state.board[4] && this.state.board[3] === this.state.board[5] && this.state.board[5] === this.state.board[4]) ? this.state.board[5] : false,
         winner3 : (this.state.board[6] !== "" && this.state.board[7] !== "" && this.state.board[8] !== "" && this.state.board[6] === this.state.board[7] && this.state.board[6] === this.state.board[8] && this.state.board[7] === this.state.board[8]) ? this.state.board[7] : false,
