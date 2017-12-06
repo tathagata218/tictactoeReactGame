@@ -79,13 +79,13 @@ class App extends Component {
       });
       console.log("I am in Rand Function");
    
- 
+      this.render();
     }
    
     
     setTimeout(randomNum, 1000);
     setTimeout (console.log(this.state),1100);
-    setTimeout(this.render,1200);
+    //setTimeout(this.render,1200);
 
     
 
