@@ -85,7 +85,7 @@ class App extends Component {
     
     setTimeout(randomNum, 1000);
     
-    setTimeout(console.log(this.state),1600);
+    setTimeout(this.render,1600);
 
     console.log(this.state);
 
