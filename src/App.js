@@ -37,7 +37,7 @@ class App extends Component {
 }
 
   divClickfuncOne = (index) => { 
-    if( this.state.board[index] === "" && !this.state.winner1 && !this.state.winner2 && !this.state.winner3 && !this.state.winner4&& !this.state.winner5 && !this.state.winner6 && ! this.state.winner7 && !this.state.winner8){
+    if( this.state.board[index] === "" && !this.state.winner1 && !this.state.winner2 && !this.state.winner3 && !this.state.winner4&& !this.state.winner5 && !this.state.winner6 && !this.state.winner7 && !this.state.winner8){
       
      this.state.board[index] = this.state.current_player;
     
@@ -86,7 +86,7 @@ class App extends Component {
     setTimeout(randomNum, 1000);
    
     //setTimeout(this.render,1200);
-
+  
     
     this.render();
   }
@@ -207,7 +207,7 @@ if( this.state.current_player !== undefined){
       </div>
     );
   }
-   else if(this.state.single_player_status){
+   else if(this.state.single_player_status && this.state.winner1 === false && this.state.winner2 === false && this.state.winner3 === false && this.state.winner4 === false &&this.state.winner5 === false && this.state.winner6 === false && this.state.winner7 === false &&  this.state.winner8 === false){
       return(
         <div>
           <div className="mainDispalay">
