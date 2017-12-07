@@ -71,7 +71,7 @@ class App extends Component {
     }
    
     
-    setTimeout(randomNum, 1000);
+    setTimeout(randomNum, 500);
    
    
   
@@ -195,13 +195,14 @@ if( this.state.current_player !== undefined){
       </div>
     );
   }
+//{/* This is the single player function */}
    else if(this.state.single_player_status && this.state.winner1 === false && this.state.winner2 === false && this.state.winner3 === false && this.state.winner4 === false &&this.state.winner5 === false && this.state.winner6 === false && this.state.winner7 === false &&  this.state.winner8 === false){
       return(
         <div>
           <div className="mainDispalay">
             <h1> {this.state.player_info} </h1>
             <button className = "btn btn-primary btn-lg " onClick={this.goBack}>Go Back</button>
-            <h2>it's '{this.state.current_player}' turn !!!</h2>
+            <h2>You are '{this.state.current_player}' and the computer is '{this.state.comp_choice}'</h2>
           </div>
 
         <div className="board">
@@ -213,6 +214,7 @@ if( this.state.current_player !== undefined){
       </div>
       );
     }
+   // {/* This is the double plauyer player function */}
     else if (this.state.two_player_status && this.state.winner1 === false && this.state.winner2 === false && this.state.winner3 === false && this.state.winner4 === false &&this.state.winner5 === false && this.state.winner6 === false && this.state.winner7 === false &&  this.state.winner8 === false ){
       return(
         <div>
