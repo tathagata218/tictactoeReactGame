@@ -1,4 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Cookie|Grand+Hotel');
+body {
+  font-family: 'Cookie', cursive;
+  font-family: 'Grand Hotel', cursive;
+
+}
+
 .mainDispalay{
+  font-family: 'Cookie', cursive;
+  font-family: 'Grand Hotel', cursive;
+  font-size: 30px;
   margin: 0 auto;
   text-align: center;
   margin-bottom: 15px;

@@ -32,7 +32,7 @@ class App extends Component {
  
  
   this.render();
-  // console.log(this.state);
+
  
 }
 
@@ -66,15 +66,14 @@ class App extends Component {
         winner8 : (this.state.board[2] !== "" && this.state.board[4] !== "" && this.state.board[6] !== "" && this.state.board[2] === this.state.board[4] && this.state.board[2] === this.state.board[6] && this.state.board[4] === this.state.board[6]) ? this.state.board[4] : false
 
       });
-      console.log("I am in Rand Function");
-      console.log(this.state);
-      //this.render();
+   
+   
     }
    
     
     setTimeout(randomNum, 1000);
    
-    //setTimeout(this.render,1200);
+   
   
     
     this.render();
