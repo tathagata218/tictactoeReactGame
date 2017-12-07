@@ -186,11 +186,11 @@ if( this.state.current_player !== undefined){
           <h1>Tic Tac Toe Game</h1>
           <div>
             <h3>What whould you like to be X or O ?</h3>
-            <button className="btnClick" onClick={this.xSelector}>X</button>
-            <button className="btnClick" onClick={this.oSelector}>O</button> 
+            <button className="btn btn-primary btn-lg btnClick" onClick={this.xSelector}>X</button>
+            <button className="btn btn-primary btn-lg btnClick" onClick={this.oSelector}>O</button> 
             <h3>How do you want to play ?</h3> 
-            <button className="btnClick" onClick={this.onePlayer} >Player VS Computer</button>
-            <button className="btnClick" onClick={this.twoPlayer} >Player VS Player</button>
+            <button className="btn btn-primary btn-lg btnClick" onClick={this.onePlayer} >Player VS Computer</button>
+            <button className="btn btn-primary btn-lg btnClick" onClick={this.twoPlayer} >Player VS Player</button>
           </div>
         </div>
       </div>
@@ -201,7 +201,7 @@ if( this.state.current_player !== undefined){
         <div>
           <div className="mainDispalay">
             <h1> {this.state.player_info} </h1>
-            <button onClick={this.goBack}>Go Back</button>
+            <button className = "btn btn-primary btn-lg " onClick={this.goBack}>Go Back</button>
             <h2>it's '{this.state.current_player}' turn !!!</h2>
           </div>
 
@@ -220,7 +220,7 @@ if( this.state.current_player !== undefined){
           <div className="mainDispalay">
 
             <h1>{this.state.player_info}</h1>
-            <button onClick={this.goBack}>Go Back</button>
+            <button className= "btn btn-primary btn-lg" onClick={this.goBack}>Go Back</button>
             <h2>it's '{this.state.current_player}' turn !!!</h2>
           </div>
           <div className="mainDispalay">
@@ -239,7 +239,7 @@ if( this.state.current_player !== undefined){
         <div>
           <div className="mainDispalay">
             <h1 value= "test1">The winner is {this.state.winner1}</h1>
-            <button onClick={this.goBack}>Go Back Start</button>
+            <button className = "btn btn-primary btn-lg" onClick={this.goBack}>Go Back Start</button>
           </div>
         </div>
       );
@@ -249,7 +249,7 @@ if( this.state.current_player !== undefined){
         <div>
           <div className="mainDispalay">
             <h1 value= "test2">The winner is {this.state.winner2}</h1>
-            <button onClick={this.goBack}>Go Back Start</button>
+            <button className="btn btn-primary btn-lg" onClick={this.goBack}>Go Back Start</button>
           </div>
         </div>
       );
@@ -259,7 +259,7 @@ if( this.state.current_player !== undefined){
         <div>
           <div className="mainDispalay">
             <h1 value= "test3">The winner is {this.state.winner3}</h1>
-            <button onClick={this.goBack}>Go Back Start</button>
+            <button className="btn btn-primary btn-lg" onClick={this.goBack}>Go Back Start</button>
           </div>
         </div>
       );
@@ -269,7 +269,7 @@ if( this.state.current_player !== undefined){
         <div>
           <div className="mainDispalay">
             <h1 value= "test4">The winner is {this.state.winner4}</h1>
-            <button onClick={this.goBack}>Go Back Start</button>
+            <button className="btn btn-primary btn-lg" onClick={this.goBack}>Go Back Start</button>
           </div>
         </div>
       );
@@ -279,7 +279,7 @@ if( this.state.current_player !== undefined){
         <div>
           <div className="mainDispalay">
             <h1 value= "test5">The winner is {this.state.winner5}</h1>
-            <button onClick={this.goBack}>Go Back Start</button>
+            <button className="btn btn-primary btn-lg" onClick={this.goBack}>Go Back Start</button>
           </div>
         </div>
       );
@@ -289,7 +289,7 @@ if( this.state.current_player !== undefined){
         <div>
           <div className="mainDispalay">
             <h1 value= "test6">The winner is {this.state.winner6}</h1>
-            <button onClick={this.goBack}>Go Back Start</button>
+            <button className="btn btn-primary btn-lg" onClick={this.goBack}>Go Back Start</button>
           </div>
         </div>
       );
@@ -299,7 +299,7 @@ if( this.state.current_player !== undefined){
         <div>
           <div className="mainDispalay">
             <h1 value= "test7">The winner is {this.state.winner7}</h1>
-            <button onClick={this.goBack}>Go Back Start</button>
+            <button className="btn btn-primary btn-lg" onClick={this.goBack}>Go Back Start</button>
           </div>
         </div>
       );
@@ -309,7 +309,7 @@ if( this.state.current_player !== undefined){
         <div>
           <div className="mainDispalay">
             <h1 value= "test8">The winner is {this.state.winner8}</h1>
-            <button onClick={this.goBack}>Go Back Start</button>
+            <button className="btn btn-primary btn-lg" onClick={this.goBack}>Go Back Start</button>
           </div>
         </div>
       );
