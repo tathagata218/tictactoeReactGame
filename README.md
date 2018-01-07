@@ -1,6 +1,6 @@
-#Tic Tac Toe Game
+# Tic Tac Toe Game
 
-##Description:
+## Description:
 This is a React JS Tic Tac Toe Game.
 
 Link to the Game- https://tathagata218.github.io/tictactoeReactGame/
